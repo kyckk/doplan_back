@@ -14,12 +14,12 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Entity
 @Data
-@Table(name="posts")// 테이블이름
-public class Posts {
+@Table(name="todo")// 테이블이름
+public class Todo {
     @Id
-    private int postId;
-    private String title;
+    private int todoId;
     private String content;
-    private String author;
+    private boolean isComplete;
     private LocalDate createdAt;
+    private LocalDate updatedAt;
 }

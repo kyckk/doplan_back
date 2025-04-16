@@ -1,12 +1,12 @@
 package com.task.doplanBack.web.todo.controller;
 
-import com.task.doplanBack.web.todo.model.Posts;
-import com.task.doplanBack.web.todo.repository.PostRepository;
+
+import com.task.doplanBack.web.todo.model.Todo;
+
+import com.task.doplanBack.web.todo.repository.TodoRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @RestController
@@ -15,16 +15,24 @@ import java.util.List;
 public class Controller {
 
     @Autowired
-    private PostRepository postRepository;
+    private TodoRepository todoRepository;
 
 
     @GetMapping("/todoList")
-    public List<Posts> todList(){
+    public List<Todo> todList(){
 
         log.info("index 진입");
-        return  postRepository.findAll();
+        List<Todo> x= todoRepository.findAll();
+        log.info(x.toString());
+        return  todoRepository.findAll();
     }
-
+    @PostMapping("/saveTodo")
+    @ResponseBody
+    public String saveTodo(@RequestBody List<Todo> todo){
+        log.info(String.valueOf(todo));
+        todoRepository.saveAll(todo);
+        return "";
+    }
 
 }
 
