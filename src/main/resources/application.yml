@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/projectm?autoReconnect=true&useUnicode=true&serverTimezone=Asia/Seoul
+    username: test
+    password: 1234
+#  jpa:
+#    show-sql: true # ?? ?? Show ??
+#    properties:
+#      hibernate:
+#        format_sql: true # SQL? ???? ??
