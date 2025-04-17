@@ -17,9 +17,9 @@ import java.time.LocalDate;
 @Table(name="todo")// 테이블이름
 public class Todo {
     @Id
-    private int todoId;
+    private Integer todoId;
     private String content;
-    private boolean isComplete;
+    private boolean completed;
     private LocalDate createdAt;
     private LocalDate updatedAt;
 }
