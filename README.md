@@ -25,16 +25,28 @@ git clone https://github.com/kyckk/doplan_back.git
 
 3. 주요 폴더 구조
 
-📦 todo-backend
-└── src/main/java/com/task/doplanBack/web/todo
-    ├── controller       # REST API 컨트롤러
-    ├── model            # Entity 및 DTO 클래스
-    ├── repository       # JPA Repository
-    └── DoplanBackApplication  # 메인 클래스
+todo-backend/
+├── src/
+│   └── main/
+│       ├── java/
+│       │   └── com/task/doplanBack/web/todo/
+│       │       ├── controller/
+│       │       │   └── Controller.java
+│       │       ├── model/
+│       │       │   ├── Todo.java
+│       │       │  
+│       │       ├── repository/
+│       │       │   └── TodoRepository.java
+│       │       └── DoplanBackApplication.java
+│       └── resources/
+│           ├── application.yml
+│           └── db/
+│               └── create.sql
+
 4. API 명세
 
 메서드	URL	설명
-GET	/todoList	전체 할 일 목록 조회
+GET	    /todoList	전체 할 일 목록 조회
 POST	/saveTodo	새 할 일 추가 및 수정
 
 
