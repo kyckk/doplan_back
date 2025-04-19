@@ -18,41 +18,30 @@ Java 21과 Spring Boot를 기반으로 REST API를 제공합니다.
 
 ```bash
 # 1. 프로젝트 클론
-git clone https://github.com/your-username/todo-backend.git
-cd todo-backend
+git clone https://github.com/kyckk/doplan_back.git
 
 # 2. 애플리케이션 실행
-./mvnw spring-boot:run
-또는 IDE(IntelliJ 등)에서 TodoApplication.java 직접 실행
+또는 IDE(IntelliJ 등)에서 DoplanBackApplication.java 직접 실행
 
 3. 주요 폴더 구조
-bash
-복사
-편집
+
 📦 todo-backend
-└── src/main/java/com/example/todo
+└── src/main/java/com/task/doplanBack/web/todo
     ├── controller       # REST API 컨트롤러
     ├── model            # Entity 및 DTO 클래스
     ├── repository       # JPA Repository
-    ├── service          # 비즈니스 로직
-    └── TodoApplication  # 메인 클래스
+    └── DoplanBackApplication  # 메인 클래스
 4. API 명세
 
 메서드	URL	설명
-GET	/api/todos	전체 할 일 목록 조회
-POST	/api/todos	새 할 일 추가
-PUT	/api/todos/{id}	할 일 수정
-DELETE	/api/todos/{id}	할 일 삭제
-5. Swagger 사용
-txt
-복사
-편집
-http://localhost:8080/swagger-ui/index.html
-Swagger를 통해 API 테스트 및 문서 확인 가능
+GET	/todoList	전체 할 일 목록 조회
+POST	/saveTodo	새 할 일 추가 및 수정
 
-6. 추가 기능
-✅ 마감일 정렬된 리스트 반환
 
-✅ 태그 포함 데이터 저장
+
+5. 추가 기능
+✅ save를 통해 upadate와 insert한번에 구현
+
+✅ 수동으로 식별자 최댓값부여
 
 ✅ CORS 설정으로 프론트와 연동 허용
