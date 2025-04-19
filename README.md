@@ -31,17 +31,17 @@ todo-backend/
 │       ├── java/
 │       │   └── com/task/doplanBack/web/todo/
 │       │       ├── controller/
-│       │       │   └── Controller.java
+│       │       │   └── Controller.java      # REST API 컨트롤러
 │       │       ├── model/
-│       │       │   ├── Todo.java
+│       │       │   ├── Todo.java            # Entity 클래스
 │       │       │  
-│       │       ├── repository/
-│       │       │   └── TodoRepository.java
-│       │       └── DoplanBackApplication.java
+│       │       ├── repository/             
+│       │       │   └── TodoRepository.java   # JPA Repository
+│       │       └── DoplanBackApplication.java   
 │       └── resources/
-│           ├── application.yml
+│           ├── application.yml               #  db설정파일
 │           └── db/
-│               └── create.sql
+│               └── create.sql                 #  테이블 생성
 
 4. API 명세
 
