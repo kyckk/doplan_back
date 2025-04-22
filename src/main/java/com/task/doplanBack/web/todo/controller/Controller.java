@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
@@ -29,6 +31,24 @@ public class Controller {
 
         return  todoRepository.findAll();
     }
+
+    @PostMapping("selectTodoList")
+    @ResponseBody
+    public List<Todo> selectTodoList(@RequestBody String todo){
+        log.info("todo 일: {}", todo);
+        String cleaned = todo.replace("\"", "");
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/M/d"); // 한 자리 월/일도 허용
+
+        LocalDate start = LocalDate.parse(cleaned, formatter);
+
+        LocalDate end= start.plusDays(1);
+       List<Todo> result= todoRepository.findByCreatedAtBetweenAndCompletedIsTrue(start,end);
+        log.info("완료된 일: {}", result);
+        return result;
+    }
+
+
     @PostMapping("/saveTodo")
     @ResponseBody
     public String saveTodo(@RequestBody List<Todo> todo){
