@@ -47,8 +47,8 @@ todo-backend/
 
 메서드	URL	설명
 GET	    /todoList	전체 할 일 목록 조회
-POST	/saveTodo	새 할 일 추가 및 수정
-
+POST	  /saveTodo	새 할 일 추가 및 수정
+POST    /selectTodoList 완료목록 조회
 
 
 5. 추가 기능
