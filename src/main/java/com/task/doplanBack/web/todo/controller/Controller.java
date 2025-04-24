@@ -32,7 +32,7 @@ public class Controller {
         return  todoRepository.findAll();
     }
 
-    @PostMapping("selectTodoList")
+    @PostMapping("/selectTodoList")
     @ResponseBody
     public List<Todo> selectTodoList(@RequestBody String todo){
         log.info("todo 일: {}", todo);
